@@ -2,10 +2,19 @@ sandbox:
 	load-env-purescript
 
 prepare:
+	# Prepare the source and build folders
 	mkdir -p src dist
+	# Install needed deps
+	npm install grunt-purescript@0.5.1
+	# Generate the template package.json
+	npm init
+
+install:
+	# install the package
+	npm install
 
 build:
-	psc src/Chapter2.purs --output dist/Main.js --main Chapter2 --module Chapter2
+	grunt
 
 run:
 	node dist/Main.js

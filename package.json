@@ -1,0 +1,22 @@
+{
+  "name": "purescript-lab",
+  "version": "0.0.1",
+  "description": "hacking some purescript",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ardumont/purescript-lab.git"
+  },
+  "author": "@ardumont",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ardumont/purescript-lab/issues"
+  },
+  "homepage": "https://github.com/ardumont/purescript-lab",
+  "dependencies": {
+    "grunt-purescript": "0.5.1"
+  }
+}
