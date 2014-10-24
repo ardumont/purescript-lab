@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     "use strict";
 
     grunt.initConfig({
-        srcFiles: ["src/**/*.purs"],
+        srcFiles: ["src/**/*.purs", "bower_components/**/src/**/*.purs"],
         psc: {
             options: {
                 main: "Chapter2",

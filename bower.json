@@ -1,0 +1,21 @@
+{
+  "name": "purescript-lab",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ardumont/purescript-lab",
+  "authors": [
+    "Antoine R. Dumont <antoine.romain.dumont@gmail.com>"
+  ],
+  "description": "hacking some purescript",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "purescript-math": "0.1.0"
+  }
+}
