@@ -1,11 +1,14 @@
 sandbox:
 	load-env-purescript
 
+clean:
+	rm -rf dist/*
+
 prepare:
 	# Prepare the source and build folders
 	mkdir -p src dist
 	# Install needed deps
-	npm install grunt-purescript@0.5.1 bower
+	npm install grunt-purescript@0.5.1 bower grunt-execute
 
 npm-init:
 	# Generate the template package.json
@@ -25,7 +28,8 @@ build:
 	grunt
 
 run:
-	node dist/Main.js
+	# node dist/Main.js
+	grunt run
 
 repl:
 	psci

@@ -13,9 +13,16 @@ module.exports = function(grunt) {
                 dest: "dist/Main.js"
             }
         },
-        dotPsci: ["<%=srcFiles%>"]
+        dotPsci: ["<%=srcFiles%>"],
+        execute: {
+            run: {
+                src: ["dist/Main.js"]
+            }
+        }
     });
 
     grunt.loadNpmTasks("grunt-purescript");
+    grunt.loadNpmTasks("grunt-execute");
+
     grunt.registerTask("default", ["psc:all", "dotPsci"]);
 };
