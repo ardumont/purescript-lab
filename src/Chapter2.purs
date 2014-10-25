@@ -1,6 +1,9 @@
 module Chapter2 where
 
 import Debug.Trace
+import Math
+
+diagonal w h = sqrt (w * w + h * h)
 
 iAmANumber = 
   let square x = x * x
@@ -13,5 +16,6 @@ main = do
   trace "Hello, World!"
   print iAmANumber
   print $ iterate ((+) 1) 10 0
+  print $ diagonal 3 4
   
 
