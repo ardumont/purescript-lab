@@ -28,8 +28,7 @@ build:
 	grunt
 
 run:
-	# node dist/Main.js
-	grunt run
+	grunt execute:run
 
 repl:
 	psci
