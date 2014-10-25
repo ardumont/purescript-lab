@@ -3,19 +3,19 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         srcFiles: ["src/**/*.purs", "bower_components/**/src/**/*.purs"],
-        psc: {
+        pscMake: {
             options: {
                 main: "Chapter2",
                 modules: ["Chapter2"]
             },
             all: {
                 src: ["<%=srcFiles%>"],
-                dest: "dist/Main.js"
+                dest: "dist"
             }
         },
         dotPsci: ["<%=srcFiles%>"]
     });
 
     grunt.loadNpmTasks("grunt-purescript");
-    grunt.registerTask("default", ["psc:all", "dotPsci"]);
+    grunt.registerTask("default", ["pscMake:all", "dotPsci"]);
 };
