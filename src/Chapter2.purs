@@ -5,7 +5,7 @@ import Math (sqrt, pi)
 
 diagonal w h = sqrt (w * w + h * h)
 
-iAmANumber = 
+iAmANumber =
   let square x = x * x
     in square 42
 
@@ -19,5 +19,3 @@ main = do
   print iAmANumber
   print $ iterate ((+) 1) 10 0
   print $ diagonal 3 4
-  
-
