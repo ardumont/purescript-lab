@@ -12,5 +12,17 @@ type Entry = { firstName :: String
 
 type PhoneBook = List Entry
 
+sampleEntry :: Entry
+sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
+
 showEntry :: Entry -> String
-showEntry entry = entry.lastName ++ ", " ++ entry.firstName ++ ": " ++ entry.phone
+showEntry entry = entry.lastName ++ ", " ++ entry.firstName ++ ": " ++ entry.phone ++ "\n"
+
+--showBook :: PhoneBook -> [String]
+--showBook = mapMaybe showEntry
+
+emptyBook :: PhoneBook
+emptyBook = empty
+
+insertEntry :: Entry -> PhoneBook -> PhoneBook
+insertEntry = Cons
