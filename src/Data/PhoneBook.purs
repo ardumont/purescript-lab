@@ -28,7 +28,7 @@ insertEntry :: Entry -> PhoneBook -> PhoneBook
 insertEntry = Cons
 
 findEntry :: String -> String -> PhoneBook -> Maybe Entry
-findEntry firstName lastName book = head $ filter filterEntry book
+findEntry firstName lastName = head <<< filter filterEntry
   where filterEntry :: Entry -> Boolean
         filterEntry e = e.firstName == firstName && e.lastName == lastName
 
