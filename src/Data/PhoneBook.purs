@@ -12,8 +12,8 @@ type Entry = { firstName :: String
 
 type PhoneBook = List Entry
 
-sampleEntry :: Entry
-sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
+showMaybeEntry Nothing = ""
+showMaybeEntry (Just e) = showEntry e
 
 showEntry :: Entry -> String
 showEntry entry = entry.lastName ++ ", " ++ entry.firstName ++ ": " ++ entry.phone ++ "\n"
@@ -26,3 +26,21 @@ emptyBook = empty
 
 insertEntry :: Entry -> PhoneBook -> PhoneBook
 insertEntry = Cons
+
+findEntry :: String -> String -> PhoneBook -> Maybe Entry
+findEntry firstName lastName book = head $ filter filterEntry book
+  where filterEntry :: Entry -> Boolean
+        filterEntry e = e.firstName == firstName && e.lastName == lastName
+
+headEntry :: PhoneBook -> Maybe Entry
+headEntry Nil = Nothing
+headEntry (Cons e _) = Just e
+
+--
+-- Samples
+--
+sampleEntry :: Entry
+sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
+
+samplePhoneBook :: PhoneBook
+samplePhoneBook = Cons sampleEntry emptyBook
