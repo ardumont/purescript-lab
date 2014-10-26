@@ -48,4 +48,4 @@ sampleEntry :: Entry
 sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
 
 samplePhoneBook :: PhoneBook
-samplePhoneBook = Cons sampleEntry emptyBook
+samplePhoneBook = insertEntry sampleEntry emptyBook
