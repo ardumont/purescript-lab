@@ -32,6 +32,11 @@ findEntry firstName lastName = head <<< filter filterEntry
   where filterEntry :: Entry -> Boolean
         filterEntry e = e.firstName == firstName && e.lastName == lastName
 
+-- > showEntry <$> findEntry "John" "Smith" samplePhoneBook
+-- Just ("Smith, John: 555-555-5555\n")
+-- > showEntry <$> findEntry "Josh" "Smith" samplePhoneBook
+-- Nothing
+
 headEntry :: PhoneBook -> Maybe Entry
 headEntry Nil = Nothing
 headEntry (Cons e _) = Just e
