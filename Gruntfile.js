@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+packmodule.exports = function(grunt) {
     "use strict";
 
     grunt.initConfig({
@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         psc: {
             options: {
                 main: "Chapter2",
-                modules: ["Chapter2"]
+                modules: ["Chapter2",  "data/PhoneBook.purs"]
             },
             all: {
                 src: ["<%=srcFiles%>"],
