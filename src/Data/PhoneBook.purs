@@ -37,6 +37,11 @@ findEntry firstName lastName = head <<< filter filterEntry
 -- > showEntry <$> findEntry "Josh" "Smith" samplePhoneBook
 -- Nothing
 
+findEntryPhone :: String -> PhoneBook -> Maybe Entry
+findEntryPhone phone = head <<< filter filterEntryPhone
+  where filterEntryPhone :: Entry -> Boolean
+        filterEntryPhone e = e.phone == phone
+
 headEntry :: PhoneBook -> Maybe Entry
 headEntry Nil = Nothing
 headEntry (Cons e _) = Just e
