@@ -20,5 +20,4 @@ main = do
   print $ iterate ((+) 1) 10 0
   print $ diagonal 3 4
 
--- factorial n | n <= 1 = 1
---             | _      = n * factorial (n-1)
+factorial n = if n < 2 then 1 else n * factorial (n-1)
