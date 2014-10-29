@@ -3,6 +3,7 @@ sandbox:
 
 clean:
 	rm -rf dist/*
+	rm -rf .psci_modules
 
 prepare:
 	# Prepare the source and build folders
@@ -24,7 +25,7 @@ install:
 	# install the package
 	npm install
 
-build:
+build: clean
 	grunt
 
 run:
