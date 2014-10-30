@@ -42,6 +42,9 @@ findEntryPhone phone = head <<< filter filterEntryPhone
   where filterEntryPhone :: Entry -> Boolean
         filterEntryPhone e = e.phone == phone
 
+-- > showEntry <$> findEntryPhone "555-555-5555" samplePhoneBook
+--   Just ("Smith, John: 555-555-5555\n")
+
 headEntry :: PhoneBook -> Maybe Entry
 headEntry Nil = Nothing
 headEntry (Cons e _) = Just e
