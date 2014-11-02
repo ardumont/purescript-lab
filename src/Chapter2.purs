@@ -3,6 +3,7 @@ module Chapter2 where
 import Debug.Trace
 import Math (sqrt, pi)
 
+diagonal :: Prim.Number -> Prim.Number -> Prim.Number
 diagonal w h = sqrt (w * w + h * h)
 
 iAmANumber =
