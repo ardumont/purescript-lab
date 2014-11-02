@@ -2,7 +2,7 @@ module Data.PhoneBook where
 
 import Data.List
 import Data.Maybe
-
+import Data.String (joinWith)
 import Control.Plus (empty)
 
 type Entry = { firstName :: String
@@ -18,8 +18,8 @@ showMaybeEntry (Just e) = showEntry e
 showEntry :: Entry -> String
 showEntry entry = entry.lastName ++ ", " ++ entry.firstName ++ ": " ++ entry.phone ++ "\n"
 
-showBook :: PhoneBook -> List String
-showBook = mapMaybe (\e -> Just $ showEntry e)
+showBook :: PhoneBook -> String
+showBook = joinWith "" <<< toArray <<< mapMaybe (\e -> Just $ showEntry e)
 
 emptyBook :: PhoneBook
 emptyBook = empty
