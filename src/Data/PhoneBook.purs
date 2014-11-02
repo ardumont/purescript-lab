@@ -18,8 +18,8 @@ showMaybeEntry (Just e) = showEntry e
 showEntry :: Entry -> String
 showEntry entry = entry.lastName ++ ", " ++ entry.firstName ++ ": " ++ entry.phone ++ "\n"
 
---showBook :: PhoneBook -> [String]
---showBook = mapMaybe showEntry
+showBook :: PhoneBook -> List String
+showBook = mapMaybe (\e -> Just $ showEntry e)
 
 emptyBook :: PhoneBook
 emptyBook = empty
