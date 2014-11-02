@@ -55,8 +55,14 @@ headEntry (Cons e _) = Just e
 sampleEntry :: Entry
 sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
 
+sampleEntry2 :: Entry
+sampleEntry2 = { firstName: "Lucky", lastName: "Luke", phone: "999-555-5555" }
+
 samplePhoneBook :: PhoneBook
-samplePhoneBook = insertEntry sampleEntry emptyBook
+samplePhoneBook = insertEntry sampleEntry2 $ insertEntry sampleEntry emptyBook
+
+samplePhoneBookWithDup :: PhoneBook
+samplePhoneBookWithDup = insertEntry sampleEntry $ samplePhoneBook
 
 -- > :t Data.List.null
 -- forall a. Data.List.List a -> Prim.Boolean
@@ -70,3 +76,12 @@ entryPresent lastName phone = if null phone
 --   true
 -- > entryPresent "John" samplePhoneBook
 --   false
+
+removeDuplicates :: PhoneBook -> PhoneBook
+removeDuplicates = nubBy predicateFn
+                   where predicateFn e1 e2 = e1.firstName == e2.firstName && e1.lastName == e2.lastName
+
+-- > Data.PhoneBook.showBook samplePhoneBookWithDup
+--   Cons ("Smith, John: 555-555-5555\n") (Cons ("Luke, Lucky: 999-555-5555\n") (Cons ("Smith, John: 555-555-5555\n") (Nil)))
+-- > showBook $ removeDuplicates samplePhoneBookWithDup
+--   Cons ("Smith, John: 555-555-5555\n") (Cons ("Luke, Lucky: 999-555-5555\n") (Nil))
