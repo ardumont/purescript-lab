@@ -57,3 +57,16 @@ sampleEntry = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
 
 samplePhoneBook :: PhoneBook
 samplePhoneBook = insertEntry sampleEntry emptyBook
+
+-- > :t Data.List.null
+-- forall a. Data.List.List a -> Prim.Boolean
+
+entryPresent :: String -> PhoneBook -> Boolean
+entryPresent lastName phone = if null phone
+                              then false
+                              else (not <<< null <<< filter filterEntry) phone
+                              where filterEntry entry = entry.lastName == lastName
+-- > entryPresent "Smith" samplePhoneBook
+--   true
+-- > entryPresent "John" samplePhoneBook
+--   false
