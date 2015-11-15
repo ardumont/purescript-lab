@@ -1,4 +1,5 @@
-/dist/
-/.psci_modules/
-/node_modules/
 /bower_components/
+/node_modules/
+/output/
+/.psci*
+/src/.webpack.js

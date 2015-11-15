@@ -21,6 +21,12 @@ bower-init:
 bower-update:
 	./node_modules/bower/bin/bower update
 
+pulp-init:
+	pulp init
+
+dep:
+	pulp dep
+
 install:
 	# install the package
 	npm install
