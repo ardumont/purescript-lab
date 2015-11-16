@@ -1,5 +1,6 @@
 sandbox:
-	load-env-purescript
+        # cf. ardumont/dot-files/.nixpkgs/config.nix
+	nix-env -iA nixpkgs.purescriptToolsEnv
 
 clean:
 	rm -rf dist/*
@@ -9,7 +10,10 @@ prepare:
 	# Prepare the source and build folders
 	mkdir -p src dist
 	# Install needed deps
-	npm install grunt-purescript bower grunt-execute
+	npm update
+	bower update
+	grunt
+
 
 npm-init:
 	# Generate the template package.json
