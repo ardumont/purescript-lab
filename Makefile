@@ -9,6 +9,7 @@ clean:
 prepare:
 	# Prepare the source and build folders
 	mkdir -p src dist
+	touch dist/Main.js
 	# Install needed deps
 	npm update
 	bower update

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ardumont/purescript-lab",
   "dependencies": {
-    "grunt-purescript": "0.5.1"
+      "grunt-purescript": "0.5.1",
+      "grunt-exec": "0.4.6"
   }
 }

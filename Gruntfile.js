@@ -2,11 +2,14 @@ module.exports = function(grunt) {
     "use strict";
 
     grunt.initConfig({
-        srcFiles: ["src/**/*.purs", "bower_components/**/src/**/*.purs"],
+        srcFiles: ["bower_components/**/src/**/*.purs",
+                   "src/**/*.purs",
+                   "src/*.purs"],
         psc: {
             options: {
                 main: "Chapter2",
-                modules: ["Chapter2",  "data/PhoneBook.purs"]
+                modules: ["Chapter2",
+                          "data/PhoneBook.purs"]
             },
             all: {
                 src: ["<%=srcFiles%>"],
@@ -14,15 +17,15 @@ module.exports = function(grunt) {
             }
         },
         dotPsci: ["<%=srcFiles%>"],
-        execute: {
+        exec: {
             run: {
-                src: ["dist/Main.js"]
+                cmd: "node dist/Main.js"
             }
         }
     });
 
     grunt.loadNpmTasks("grunt-purescript");
-    grunt.loadNpmTasks("grunt-execute");
+    grunt.loadNpmTasks("grunt-exec");
 
     grunt.registerTask("default", ["psc:all", "dotPsci"]);
 };
