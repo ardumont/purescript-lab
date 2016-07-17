@@ -1,5 +1,6 @@
 module Chapter2 where
 
+import Prelude
 import Debug.Trace
 import Math (sqrt, pi)
 
@@ -14,11 +15,5 @@ iterate f 0 x = x
 iterate f n x = iterate f (n - 1) (f x)
 
 circleArea r = pi * r * r
-
-main = do
-  trace "Hello, World!"
-  print iAmANumber
-  print $ iterate ((+) 1) 10 0
-  print $ diagonal 3 4
 
 factorial n = if n < 2 then 1 else n * factorial (n-1)
